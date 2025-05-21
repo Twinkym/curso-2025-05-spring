@@ -1,6 +1,8 @@
 package com.KirgoDev.controllers;
 
+import com.KirgoDev.dto.ProductoFiltroDTO;
 import com.KirgoDev.entities.Producto;
+import com.KirgoDev.repositories.CategoriaRepository;
 import com.KirgoDev.repositories.ProductoRepository;
 
 import org.springframework.stereotype.Controller;
@@ -16,17 +18,29 @@ import java.util.List;
 public class ProductoController {
 
     private final ProductoRepository productoRepository;
+    private final CategoriaRepository categoriaRepository;
 
-    public ProductoController(ProductoRepository productoRepository) {
+    public ProductoController(ProductoRepository productoRepository, CategoriaRepository categoriaRepository) {
         this.productoRepository = productoRepository;
+        this.categoriaRepository = categoriaRepository;
     }
 
     // anotación que mapea las peticiones GET a la URL "/productos"
     @GetMapping("/productos") // http://localhost:8080/productos
-    public String findAll(Model model) {
-// crear una lista con todos los productos
-        List<Producto> productos = productoRepository.findAll();
+    public String findAll(@RequestParam(required = false) String nombre, @RequestParam(required = false) Long categoriaId, @RequestParam(required = false) Boolean disponible, Model model) {
+
+        // Enviar valores al DTO para que el formulario los mantenga.
+        ProductoFiltroDTO filtro = new ProductoFiltroDTO();
+        filtro.setNombre(nombre);
+        filtro.setCategoriaId(categoriaId);
+        filtro.setDisponible(disponible);
+
+        // crear una lista con todos los productos
+        List<Producto> productos = productoRepository.findByFiltro(nombre, categoriaId, disponible);
+        productos = productoRepository.findAll();
         model.addAttribute("productos", productos);
+        model.addAttribute("filtro", filtro);
+        model.addAttribute("categorias", categoriaRepository.findAll());
 
         return "producto-list";
     }

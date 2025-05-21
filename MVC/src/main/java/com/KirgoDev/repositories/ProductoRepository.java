@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface ProductoRepository extends JpaRepository<Producto, Long>{
+public interface ProductoRepository extends JpaRepository<Producto, Long>, ProductoRepositoryCustom{
 
     // Spring boot implementa métodos básicos: save, findById, findAll, deleteById
     // JpaRepository implementa métodos más completos: save, findById, findAll, deleteById, saveAll, deleteAll, count
