@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ba8b9d42-7986-4352-9649-165caecbd191" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MVC/src/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MVC/src/main/java/com/KirgoDev/dto/ProductoFiltroDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MVC/src/main/java/com/KirgoDev/repositories/ProductoRepositoryCustom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MVC/src/main/java/com/KirgoDev/repositories/ProductoRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/src/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/src/main/java/com/KirgoDev/controllers/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/src/main/java/com/KirgoDev/controllers/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/src/main/java/com/KirgoDev/repositories/ProductoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/src/main/java/com/KirgoDev/repositories/ProductoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/src/main/resources/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/src/main/resources/templates/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/src/main/resources/templates/producto-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/src/main/resources/templates/producto-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/src/main/resources/templates/producto-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/src/main/resources/templates/producto-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/certidevs/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/certidevs/entities/Asignatura.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/certidevs/entities/Producto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/certidevs/Curso202505SpringApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileColors">
+    <fileColor scope="Production" color="Violet" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Twinkym&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/certidevs/curso-2025-05-spring.git&quot;,
+    &quot;accountId&quot;: &quot;121f1402-8c05-4710-8ac2-49e320763c8c&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2wiEfP3tYfumVNkx5NfYIMFHbnp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/FORMACION/CURSOS/FUNDACION-ADECCO/curso-2025-05-spring",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\FORMACION\CURSOS\FUNDACION-ADECCO\APUNTES-JAVA-TESTING" />
+      <recent name="F:\FORMACION\CURSOS\FUNDACION-ADECCO\curso-2025-05-spring\MVC" />
+      <recent name="F:\FORMACION\CURSOS\FUNDACION-ADECCO\curso-2025-05-spring" />
+      <recent name="F:\FORMACION\CURSOS\FUNDACION-ADECCO\DESARROLLO-WEB-JAVA-CON-TESTING-2025" />
+      <recent name="F:\FORMACION\CURSOS\FUNDACION-ADECCO\" />
+    </key>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba8b9d42-7986-4352-9649-165caecbd191" name="Changes" comment="" />
+      <created>1746516097029</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746516097029</updated>
+    </task>
+    <servers />
+  </component>
+</project>
