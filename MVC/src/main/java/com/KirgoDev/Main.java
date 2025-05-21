@@ -41,7 +41,7 @@ public class Main {
         Producto manzana2 = new Producto("Manzana 2", "Manzana Roja", 1.90, 100, frutas);
         Producto pera2 = new Producto("Pera 2", "Pera ", 1.60, 100, frutas);
         Producto uva2 = new Producto("Uva 2", "Uva blanca", 5.00, 100, frutas);
-        Producto fresa2 = new Producto("Fresa 2", "Freson de Mataró", 6.00, 100, frutas);
+        Producto fresa2 = new Producto("Fresa 2", "Fresón de Mataró", 6.00, 100, frutas);
         Producto CostillaC = new Producto("Costilla C", "Costilla Cerdo troceada", 4.57, 100, carnicos);
         Producto CostillaC2 = new Producto("Costilla C 2", "Costillar de Cerdo entero", 4.30, 100, carnicos2);
         Producto costillaR = new Producto("Costilla R", "Costilla de  Res", 6.70, 100, carnicos);
@@ -52,7 +52,7 @@ public class Main {
         Producto agua = new Producto("Agua", "Agua mineral", 0.50, 100, bebidas);
         Producto cerveza = new Producto("Cerveza", "Cerveza de Alhambra", 1.40, 100, bebidas);
         Producto cerveza2 = new Producto("Cerveza 2", "Cerveza Moritz", 1.60, 100, bebidas);
-        Producto cerveza3 = new Producto("Cerveza 3", "Cerveza estralla Galicia", 1.90, 100, bebidas);
+        Producto cerveza3 = new Producto("Cerveza 3", "Cerveza estrella Galicia", 1.90, 100, bebidas);
 
         // Save products
         productoRepository.saveAll(List.of(manzana, pera, uva, fresa, arveja, naranja, manzana2, pera2, uva2, fresa2, CostillaC, CostillaC2, costillaR, bistec, pechuga, yogur, natilla, agua, cerveza, cerveza2, cerveza3));

@@ -5,11 +5,16 @@ import com.KirgoDev.entities.Producto;
 import com.KirgoDev.repositories.CategoriaRepository;
 import com.KirgoDev.repositories.ProductoRepository;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
@@ -37,43 +42,68 @@ public class ProductoController {
 
         // crear una lista con todos los productos
         List<Producto> productos = productoRepository.findByFiltro(nombre, categoriaId, disponible);
-        productos = productoRepository.findAll();
         model.addAttribute("productos", productos);
         model.addAttribute("filtro", filtro);
         model.addAttribute("categorias", categoriaRepository.findAll());
+        model.addAttribute("producto", new Producto(String.format("Nuevo producto %s", productos.size() + 1), "", 0.0, 0, null));
 
         return "producto-list";
     }
 
+    // POST - Guardar nuevo producto desde el modal.
+    @PostMapping("/productos/nuevo")
+    public String saveNewProduct(@Valid @ModelAttribute Producto producto, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("productos", productoRepository.findAll());
+            model.addAttribute("categorias", categoriaRepository.findAll());
+            model.addAttribute("producto", producto);
+            return "producto-list"; // re-render con errores.
+        }
+        productoRepository.save(producto);
+        return "redirect:/productos";
+    }
+
+    /**
+     * Muestra el detalle de un producto.
+     */
     // Show product detail by ID
     @GetMapping("/productos/{id}")
-    public String ShowProductDetail(@PathVariable Long id, Model model) {
+    public String showProductDetail(@PathVariable Long id, Model model) {
         Producto producto = productoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Producto no encontrado con esa ID: " + id));
         model.addAttribute("producto", producto);
         return "producto-detail"; // resources/templates/producto-detail.html
     }
 
+    /**
+     * Muestra el formulario para editar un producto.
+     */
     // Edit products
     @GetMapping("/productos/editar/{id}")
     public String editProduct(@PathVariable Long id, Model model) {
         Producto producto = productoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Producto no encontrado con esa ID: " + id));
-        if (producto == null) {
-            model.addAttribute("error", "Producto no encontrado con esa ID: " + id);
-            return "redirect:/productos";
-        }
         model.addAttribute("producto", producto);
         return "producto-edit";  // resources/templates/producto-edit.html
     }
 
+    /**
+     * Actualiza un producto existente.
+     */
+    // Update products
+    @PostMapping("/productos/editar/{id}")
+    public String updateProduct(@PathVariable Long id, @Valid @ModelAttribute Producto producto, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("producto", producto);
+            return "producto-edit"; // re-render con errores.
+        }
+        producto.setId(id);
+        productoRepository.save(producto);
+        return "redirect:/productos";
+    }
     // Delete products
-    @GetMapping("/productos/editar/{id}")
+    @GetMapping("/productos/eliminar/{id}")
     public String deleteProduct(@PathVariable Long id, Model model) {
         Producto producto = productoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Producto no encontrado con esa ID: " + id));
-        if (producto != null) {
-            productoRepository.delete(producto);
-        } else {
-            model.addAttribute("error", "Producto no encontrado con esa ID: " + id);
-        }
+        productoRepository.delete(producto);
         return "redirect:/productos";
     }
 }

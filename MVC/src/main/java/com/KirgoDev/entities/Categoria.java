@@ -3,7 +3,7 @@ package com.KirgoDev.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "categorias")
+@Table(name = "categorías")
 public class Categoria {
 
     @Id

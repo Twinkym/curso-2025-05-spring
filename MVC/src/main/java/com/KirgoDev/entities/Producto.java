@@ -58,6 +58,9 @@ public class Producto implements Serializable {
     @NotNull(message = "El producto debe pertenecer a una categoría")
     private Categoria categoria;
 
+    public Producto(String s, String cervezaEstrellaGalicia, double v, int i, Categoria bebidas) {
+    }
+
     // Getters and Setters
     public Long getId() {
         return id;
