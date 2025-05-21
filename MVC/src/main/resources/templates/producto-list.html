@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="David De La Puente - Kirgo">
+    <title>Lista de productos</title>
+    <!-- Bootstrap 5 CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-4">
+    <h1 class="mb-4 text-primary">Listado de productos</h1>
+
+    <!-- Tabla de Productos -->
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Disponible</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Iterar sobre los productos -->
+                <tr th:each="producto : ${productos}">
+                    <td th:if="${producto.id}" th:text="${producto.id}"></td>
+                    <td th:if="${producto.nombre}" th:text="${producto.nombre}"></td>
+                    <td th:if="${producto.precio}" th:text="${producto.precio}"></td>
+                    <td th:if="${producto.stock}" th:text="${producto.stock}"></td>
+                    <td th:if="${producto.disponible}" th:text="${producto.disponible}"></td>
+                    <td th:if="${producto.categoria}" th:text="${producto.categoria}"></td>
+                    <td>
+                        <span th:if="${producto.disponible}" class="badge bg-success">Sí</span>
+                        <span th:unless="${producto.disponible}" class="badge bg-danger">No</span>
+                    </td>
+                    <td th:text="${producto.categoria.nombre}">Categoria</td>
+                    <td>
+                        <a th:href="@{/productos/detalle?id=${producto.id}}" class="btn btn-primary btn-sm">Ver detalles</a>
+                    </td>
+                    <!-- Acciones -->
+                    <td>
+                        <a th:href="@{/producto/editar{id}(id=${producto.id})}" class="btn btn-warning btn-sm">Editar</a>
+                        <a th:href="@{/producto/eliminar/{id}(id=${producto.id})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estas seguro de eliminar este producto?');">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Botón para crear un nuevo producto -->
+    <div class="mt-4">
+        <a href="#" class="btn btn-success">Agregar nuevo producto</a>
+    </div>
+</div>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
