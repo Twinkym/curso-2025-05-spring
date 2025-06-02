@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Controller
@@ -89,8 +91,8 @@ public class ProductoController {
      * Actualiza un producto existente.
      */
     // Update products
-    @PostMapping("/productos/editar/{id}")
-    public String updateProduct(@PathVariable Long id, @Valid @ModelAttribute Producto producto, BindingResult result, Model model) {
+    @PostMapping("/productos/update/{id}")
+    public String updateProduct(@PathVariable Long id, @Valid @ModelAttribute Producto producto, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
             model.addAttribute("producto", producto);
             return "producto-edit"; // re-render con errores.
@@ -104,6 +106,20 @@ public class ProductoController {
     public String deleteProduct(@PathVariable Long id, Model model) {
         Producto producto = productoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Producto no encontrado con esa ID: " + id));
         productoRepository.delete(producto);
+        return "redirect:/productos";
+    }
+
+    @PostMapping("/productos/nuevo")
+    public String saveNewProduct(@Valid @ModelAttribute Producto producto, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
+        if (result.hasErrors()) {
+            model.addAttribute("productos", productoRepository.findAll());
+            model.addAttribute("categorias", categoriaRepository.findAll());
+            model.addAttribute("producto", producto);
+            return "Producto-list";
+        }
+        productoRepository.save(producto);
+        redirectAttributes.addFlashAttribute("mensaje", "Producto creado exitosamente");
+        redirectAttributes.addFlashAttribute("tipoMensaje", "alert-success");
         return "redirect:/productos";
     }
 }

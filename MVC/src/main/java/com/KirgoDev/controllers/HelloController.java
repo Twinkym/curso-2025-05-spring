@@ -16,7 +16,7 @@ public class HelloController {
     @GetMapping("info") // localhost:8080/info
     public String informacion(Model model) {
         // añadir datos al modelo
-        model.addAttribute("desarrollador", "M. del Olmo");
+        model.addAttribute("desarrollador", "David De La Puente - KirgoDev");
         model.addAttribute("fecha", "19/05/2025");
         model.addAttribute("version", "1.0");
 
