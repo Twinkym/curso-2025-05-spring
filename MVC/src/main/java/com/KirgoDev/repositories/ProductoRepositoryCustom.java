@@ -1,6 +1,6 @@
-package com.KirgoDev.repositories;
+package main.java.com.KirgoDev.repositories;
 
-import com.KirgoDev.entities.Producto;
+import main.java.com.KirgoDev.entities.Producto;
 import java.util.List;
 
 public interface ProductoRepositoryCustom {

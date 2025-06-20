@@ -1,6 +1,6 @@
-package com.KirgoDev.repositories;
+package main.java.com.KirgoDev.repositories;
 
-import com.KirgoDev.entities.Producto;
+import main.java.com.KirgoDev.entities.Producto;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class ProductoRepositoryImpl implements ProductoRepositoryCustom {
+public interface ProductoRepositoryImpl extends ProductoRepositoryCustom {
 
     @PersistenceContext
     private EntityManager entityManager;

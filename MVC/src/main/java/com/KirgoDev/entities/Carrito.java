@@ -1,4 +1,4 @@
-package com.KirgoDev.entities;
+package main.java.com.KirgoDev.entities;
 
 public class Carrito {
 }

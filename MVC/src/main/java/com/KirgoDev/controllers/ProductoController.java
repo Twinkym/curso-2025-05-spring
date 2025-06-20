@@ -1,9 +1,9 @@
-package com.KirgoDev.controllers;
+package main.java.com.KirgoDev.controllers;
 
-import com.KirgoDev.dto.ProductoFiltroDTO;
-import com.KirgoDev.entities.Producto;
-import com.KirgoDev.repositories.CategoriaRepository;
-import com.KirgoDev.repositories.ProductoRepository;
+import main.java.com.KirgoDev.dto.ProductoFiltroDTO;
+import main.java.com.KirgoDev.entities.Producto;
+import main.java.com.KirgoDev.repositories.CategoriaRepository;
+import main.java.com.KirgoDev.repositories.ProductoRepository;
 
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;

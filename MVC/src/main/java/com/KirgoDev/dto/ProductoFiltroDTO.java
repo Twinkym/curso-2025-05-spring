@@ -1,4 +1,4 @@
-package com.KirgoDev.dto;
+package main.java.com.KirgoDev.dto;
 
 public class ProductoFiltroDTO {
 

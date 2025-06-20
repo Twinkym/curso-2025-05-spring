@@ -1,7 +1,7 @@
-package com.KirgoDev;
+package main.java.com.KirgoDev;
 
-import com.KirgoDev.repositories.CategoriaRepository;
-import com.KirgoDev.repositories.ProductoRepository;
+import main.java.com.KirgoDev.repositories.CategoriaRepository;
+import main.java.com.KirgoDev.repositories.ProductoRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

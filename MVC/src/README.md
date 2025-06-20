@@ -32,12 +32,27 @@ Aplicación web desarrollada con **Spring Boot**, **Thymeleaf** y Bootstrap 5**,
         |----java/
         |        |----com/
         |                |----KirgoDev/
-        |                |           |----controllers/
-        |                |           |----entities/
-        |                |           |----repositories/
+        |                |            |----controllers/
+        |                |            |              |---------CategoriaController
+        |                |            |              |---------ErrorControllerCustom
+        |                |            |              |---------ProductoController
+        |                |            |----dto/
+        |                |            |       |----ProductoFiltroDTO
+        |                |            |----entities/
+        |                |            |           |----Carrito
+        |                |            |           |----Categoria
+        |                |            |           |----Producto
+        |                |            |----repositories/
+        |                |                            |----CategoriaRepository
+        |                |                            |----ProductoRepository
+        |                |                            |----ProductoRepositoryCustom
+        |                |                            
         |                |-----------Main
         |                |----resources/
         |                |             |-----templates/
+        |                |             |              |----404.html
+        |                |             |              |----categoria-list.html
+        |                |             |              |----error.html 
         |                |             |              |----info.html
         |                |             |              |----producto-list.html
         |                |             |              |----producto-detail.html

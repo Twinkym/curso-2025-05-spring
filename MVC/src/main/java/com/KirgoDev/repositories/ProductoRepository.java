@@ -1,13 +1,13 @@
-package com.KirgoDev.repositories;
+package main.java.com.KirgoDev.repositories;
 
-import com.KirgoDev.entities.Producto;
+import main.java.com.KirgoDev.entities.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface ProductoRepository extends JpaRepository<Producto, Long>, ProductoRepositoryCustom{
+public interface ProductoRepository extends JpaRepository<Producto, Long>, ProductoRepositoryImpl{
 
     // Spring boot implementa métodos básicos: save, findById, findAll, deleteById
     // JpaRepository implementa métodos más completos: save, findById, findAll, deleteById, saveAll, deleteAll, count

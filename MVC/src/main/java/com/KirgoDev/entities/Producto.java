@@ -1,7 +1,8 @@
-package com.KirgoDev.entities;
+package main.java.com.KirgoDev.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+
+import org.hibernate.annotations.processing.Pattern;
 
 import java.io.Serializable;
 
@@ -17,7 +18,6 @@ public class Producto implements Serializable {
      * El nombre del producto no puede estar vacío ni tener caracteres especiales.
      * Los caracteres permitidos son letras y números.
      */
-    @NotBlank(message = "El nombre no puede estar vacío")
     @Pattern(regexp = "^[a-zA-Z0-9\\s]+$", message = "El nombre solo puede contener letras")
     private String nombre;
 
@@ -46,7 +46,6 @@ public class Producto implements Serializable {
      * La descripción del producto no puede estar vacía ni tener más de 200 caracteres.
      * Los caracteres permitidos son letras, números y espacios en blanco.
      */
-    @NotBlank(message = "La descripción no puede estar vacía")
     @Size(min = 10, max = 200, message = "La descripción debe tener entre 10 y 200 caracteres")
     private String descripcion;
 

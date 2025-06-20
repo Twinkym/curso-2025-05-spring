@@ -1,4 +1,4 @@
-package com.KirgoDev.entities;
+package main.java.com.KirgoDev.entities;
 
 import jakarta.persistence.*;
 

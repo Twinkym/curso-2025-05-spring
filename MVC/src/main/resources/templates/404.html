@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="David De La Puente Enriquez - KirgoDev">
+    <title>404 - Página No Encontrada</title>
+
+</head>
+<body>
+  <h1>404</h1>
+  <p>¡Vaya! Parece que la pagína que buscas no existe.</p>
+  <p>Puedes volver a la <a th:href="@{}">página de inicio</a>.</p>
+
+  <div class="binoculars-container">
+    <img th:src="@{/img/404_binoculars.svg" alt="Prismáticos formato 404">
+  </div>
+</body>
+</html>

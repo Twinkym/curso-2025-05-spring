@@ -1,6 +1,6 @@
-package com.KirgoDev.repositories;
+package main.java.com.KirgoDev.repositories;
 
-import com.KirgoDev.entities.Categoria;
+import main.java.com.KirgoDev.entities.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 import java.util.List;
